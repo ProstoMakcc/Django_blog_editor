@@ -32,7 +32,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     text = models.TextField(max_length=1000, blank=True)
     creation_date = models.DateTimeField(default=timezone.now, verbose_name="Creation Date")
-    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, default=1)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = "Post"
