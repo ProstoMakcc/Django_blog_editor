@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog list</title>
+    <style>
+        .blog-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+        }
+        .blog-list li {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Blog List</h1>
+    <ul class="blog-list">
+        {% for blog in blogs %}
+            <li>
+                <h2><a href="{% url 'post_list' blog.id %}">{{ blog.title }}</a></h2>
+                <p><em>{{ blog.created_date }}</em></p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
